@@ -1,0 +1,38 @@
+<p>home works!</p>
+<h2>Name1: {{name1}}</h2>
+<h2>Name2: {{name2()}}</h2>
+<h2>Name3: {{name$ | async}}</h2>
+
+<button (click)="update()">Change</button>
+
+<div class="homeContainer">
+
+    <form [formGroup]="registerForm">
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="Enter name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Phone</mat-label>
+            <input matInput type="number" placeholder="Enter phone" formControlName="phone">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width"> 
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter email" formControlName="email">
+        </mat-form-field>
+
+        <p *ngIf="emailFound" class="error">
+            Email already exists
+        </p>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Enter password" formControlName="password">
+        </mat-form-field>
+
+        <button mat-raised-button (click)="save()">Save</button>
+        
+    </form>
+</div>
